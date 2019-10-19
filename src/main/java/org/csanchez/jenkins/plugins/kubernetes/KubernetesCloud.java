@@ -212,12 +212,12 @@ public class KubernetesCloud extends Cloud {
     public boolean isOpenShift() {
         try {
             if (connect().isAdaptable(OpenShiftClient.class)) {
-                return true;
+                return false;
             }
         } catch (Exception e) {
             // ignore
         }
-        return false;
+        return true;
     }
 
     @Nonnull
